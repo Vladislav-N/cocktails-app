@@ -1,0 +1,25 @@
+{
+  "menu": {
+    "margarita": "Margarita",
+    "mojito": "Mojito",
+    "a1": "A1",
+    "kir": "Kir"
+  },
+  "cocktail": {
+    "category": "Category",
+    "type": "Type",
+    "glass": "Glass",
+    "ingredients": "Ingredients",
+    "instructions": "Instructions"
+  },
+  "notFound": {
+    "title": "404",
+    "subTitle": "Sorry, the page you visited does not exist.",
+    "backHome": "Back Home"
+  },
+  "loading": "Loading...",
+  "error": {
+    "fetch": "Failed to fetch cocktails",
+    "notFound": "No cocktails found"
+  }
+} 

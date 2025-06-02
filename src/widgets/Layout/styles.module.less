@@ -1,0 +1,32 @@
+.layout {
+  min-height: 100vh;
+}
+
+.sider {
+  position: fixed;
+  left: 0;
+  height: 100vh;
+  overflow: auto;
+
+  @media (max-width: 768px) {
+    position: relative;
+    height: auto;
+  }
+}
+
+.content {
+  margin-left: 200px;
+  padding: 24px;
+
+  @media (max-width: 768px) {
+    margin-left: 0;
+    padding: 16px;
+  }
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 1024px;
+  min-width: 360px;
+  width: 100%;
+} 
