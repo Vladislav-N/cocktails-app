@@ -1,17 +1,12 @@
 import '@testing-library/jest-dom';
 import { jest } from '@jest/globals';
 
-declare global {
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const jest: typeof import('@jest/globals')['jest'];
-}
-
-// Mock matchMedia
+// Mock window.matchMedia
 Object.defineProperty(window, 'matchMedia', {
   writable: true,
-  value: jest.fn().mockImplementation((query: string) => ({
+  value: jest.fn().mockImplementation((...args: unknown[]) => ({
     matches: false,
-    media: query,
+    media: args[0] as string,
     onchange: null,
     addListener: jest.fn(),
     removeListener: jest.fn(),
@@ -19,4 +14,14 @@ Object.defineProperty(window, 'matchMedia', {
     removeEventListener: jest.fn(),
     dispatchEvent: jest.fn(),
   })),
-}); 
+});
+
+// Mock i18next
+jest.mock('react-i18next', () => ({
+  useTranslation: () => ({
+    t: (str: string) => str,
+    i18n: {
+      changeLanguage: () => new Promise(() => {}),
+    },
+  }),
+}));
